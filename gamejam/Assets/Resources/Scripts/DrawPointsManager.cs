@@ -99,6 +99,7 @@ public class DrawPointsManager : Singleton<DrawPointsManager>
             m_LineRenderer.positionCount = 0;
             m_PointsInShape.Clear();
             DisableAllPoints();
+            m_CanDrawPoints = true;
             GlobalEvents.CursorEvents.ClearPointsEvent?.Invoke();
         }
     }
