@@ -13,6 +13,7 @@ namespace Events
 public class GlobalEvents
 {
     public static VoidEvent GameOverEvent;
+    public static VoidEvent LeaveEndScreenEvent;
     public class PlayerEvents
     {
         public static VoidEvent PlayerDeathEvent;

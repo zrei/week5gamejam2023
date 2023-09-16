@@ -10,16 +10,23 @@ public class PointsManager : Singleton<PointsManager>
     {
         base.HandleAwake();
         GlobalEvents.EnemyEvents.OnEnemyDeath += HandleEnemyDeath;
+        GlobalEvents.LeaveEndScreenEvent += HandleLeaveEndScreen;
     }
 
     protected override void HandleDestroy()
     {
         base.HandleDestroy();
         GlobalEvents.EnemyEvents.OnEnemyDeath -= HandleEnemyDeath;
+        GlobalEvents.LeaveEndScreenEvent -= HandleLeaveEndScreen;
     }
 
     private void HandleEnemyDeath()
     {
         m_Points += 1;
+    }
+
+    private void HandleLeaveEndScreen()
+    {
+        m_Points = 0;
     }
 }
