@@ -68,6 +68,7 @@ public class EnemyDeath : MonoBehaviour
             anim = GetComponent<Animator>();
             anim.SetTrigger("isDead");
             anim.SetBool("hasDied", true);
+            GetComponent<Collider2D>().enabled = false;
             GlobalEvents.EnemyEvents.OnEnemyDeath?.Invoke();
             Destroy(transform.parent.gameObject, 1f);
         }
