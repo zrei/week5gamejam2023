@@ -46,6 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DebugTextOn: 1
   m_PointsInShape: 4
+  m_PlayerCursorColliderRadius: 1
+  m_ShapePointColliderRadius: 2
+  m_FoodHealthValue: 5
+  m_PlayerHealthValue: 10
 --- !u!1 &3466920829575463121
 GameObject:
   m_ObjectHideFlags: 0

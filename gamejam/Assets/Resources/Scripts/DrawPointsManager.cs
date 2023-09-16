@@ -46,6 +46,11 @@ public class DrawPointsManager : Singleton<DrawPointsManager>
             m_PointObjects.Add(newPoint);
         }
         m_LineRenderer.positionCount = 0;
+        m_LineRenderer.startColor = Color.black;
+        m_LineRenderer.endColor = Color.black;
+        m_LineRenderer.startWidth = 0.2f;
+        m_LineRenderer.endWidth = 0.2f;
+
     }
 
     private void HandleCollidePoint()
