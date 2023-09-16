@@ -29,4 +29,8 @@ public class GlobalSettings : Singleton<GlobalSettings>
 
     [SerializeField] private int m_PlayerHealthValue = 10;
     public static int g_PlayerHealthValue => Instance.m_PlayerHealthValue;
+
+    [Header("Player values")]
+    [SerializeField] private float m_PlayerInvulTime = 0.5f;
+    public static float g_PlayerInvulTime => Instance.m_PlayerInvulTime;
 }
