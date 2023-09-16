@@ -63,6 +63,14 @@ public class InsectMovement : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Food")
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void StartShooting(Vector2 mousePosition)
     {
         if (!isShooting)
