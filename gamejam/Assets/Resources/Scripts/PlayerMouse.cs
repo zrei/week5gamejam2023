@@ -39,7 +39,7 @@ public class PlayerMouse : Singleton<PlayerMouse>
             GlobalEvents.PlayerControlEvents.WithinPointRangeEvent?.Invoke();
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-            Debug.Log("Collided");
+            GlobalEvents.PlayerEvents.PlayerHealthChangeEvent?.Invoke(-1);
             //HandleAttack();  //probably throw to another script for cleanliness
     }
 

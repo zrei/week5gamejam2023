@@ -67,6 +67,7 @@ public class EnemyDeath : MonoBehaviour
         {
             anim = GetComponent<Animator>();
             anim.SetTrigger("isDead");
+            GlobalEvents.EnemyEvents.OnEnemyDeath?.Invoke();
             Destroy(gameObject, 1f);
         }
     }

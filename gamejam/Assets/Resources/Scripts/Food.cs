@@ -22,6 +22,7 @@ public class Food : MonoBehaviour
         if (other.tag == "Insect")
         {
             Destroy(other.gameObject.transform.parent.gameObject);
+            GlobalEvents.FoodEvents.FoodHealthEvent?.Invoke(-1);
         }
     }
 }

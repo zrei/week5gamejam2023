@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class PlayerHealthBarManager : Singleton<PlayerHealthBarManager>
+
+public class HealthBarManager : Singleton<HealthBarManager>
 {
     [SerializeField] Slider m_Slider;
     private int m_Health;
@@ -8,19 +9,19 @@ public class PlayerHealthBarManager : Singleton<PlayerHealthBarManager>
     protected override void HandleAwake()
     {
         base.HandleAwake();
-        m_Slider.maxValue = GlobalSettings.g_FoodHealthValue;
-        m_Health = GlobalSettings.g_FoodHealthValue;
+        m_Slider.maxValue = GlobalSettings.g_PlayerHealthValue;
+        m_Health = GlobalSettings.g_PlayerHealthValue;
         m_Slider.value = m_Health;
-        GlobalEvents.FoodEvents.FoodHealthEvent += HandleFoodHealthEvent;
+        GlobalEvents.PlayerEvents.PlayerHealthChangeEvent += HandlePlayerHealthEvent;
     }
 
     protected override void HandleDestroy()
     {
         base.HandleDestroy();
-        GlobalEvents.FoodEvents.FoodHealthEvent -= HandleFoodHealthEvent;
+        GlobalEvents.PlayerEvents.PlayerHealthChangeEvent -= HandlePlayerHealthEvent;
     }
 
-    private void HandleFoodHealthEvent(int changeInHealth)
+    private void HandlePlayerHealthEvent(int changeInHealth)
     {
         m_Health += changeInHealth;
         m_Slider.value = m_Health;

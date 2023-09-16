@@ -16,7 +16,7 @@ public class GlobalEvents
     public class PlayerEvents
     {
         public static VoidEvent PlayerDeathEvent;
-        public static FloatEvent PlayerHealthChangeEvent;
+        public static IntEvent PlayerHealthChangeEvent;
     }
     public class CursorEvents
     {
@@ -36,5 +36,10 @@ public class GlobalEvents
     public class FoodEvents
     {
         public static IntEvent FoodHealthEvent;
+    }
+
+    public class EnemyEvents
+    {
+        public static VoidEvent OnEnemyDeath;
     }
 }
