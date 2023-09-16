@@ -1,40 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : Persisting
+public class GameManager : Singleton<GameManager>
 {
-    // Start is called before the first frame update
-    /*void Start()
+    protected override void HandleAwake()
     {
-        GlobalEvents.PlayerEvents.PlayerHealthChangeEvent += ChangePlayerHealth;
-        GlobalEvents.PlayerEvents.PlayerDeathEvent += PlayerDeath;
-
+        base.HandleAwake();
+        GlobalEvents.GameOverEvent += HandleGameOver;
     }
 
-    void OnDestroy()
+    protected override void HandleDestroy()
     {
-        GlobalEvents.PlayerEvents.PlayerHealthChangeEvent -= ChangePlayerHealth;
-        GlobalEvents.PlayerEvents.PlayerDeathEvent -= PlayerDeath;
+        base.HandleDestroy();
+        GlobalEvents.GameOverEvent -= HandleGameOver;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleGameOver()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    private void ChangePlayerHealth(float change)
-    {
-        playerHealth += change;
-        if (playerHealth <= 0)
-        {
-            GlobalEvents.PlayerEvents.PlayerDeathEvent?.Invoke();
-        }
-    }
-
-    private void PlayerDeath()
-    {
-        Debug.Log("Player died");
-    }*/
 }
