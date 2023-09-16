@@ -9,7 +9,7 @@ public class WaveManager : MonoBehaviour
     public List<Transform> spawnPoints;
 
     public float spawnInterval;
-    float nextSpawnTime;
+    private float nextSpawnTime;
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class WaveManager : MonoBehaviour
         if (Time.fixedTime > nextSpawnTime)
         {
             nextSpawnTime += spawnInterval;
+            spawnInterval -= 0.1f;
             SpawnWave();
         }
     }
