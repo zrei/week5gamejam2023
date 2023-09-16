@@ -14,7 +14,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nextSpawnTime = spawnInterval;
+        nextSpawnTime = Time.fixedTime;
     }
 
     // Update is called once per frame
