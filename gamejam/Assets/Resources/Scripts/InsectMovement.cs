@@ -9,7 +9,7 @@ public class InsectMovement : MonoBehaviour
     private GameObject insect;
     private bool isShooting = false;
     [SerializeField] private float speed = 1f;
-    [SerializeField] private float bulletSpeed = 50f;
+    [SerializeField] private float bulletSpeed = 70f;
     [SerializeField] private float minDistanceToMouse = 2f;
     // Start is called before the first frame update
     void Start()
@@ -74,8 +74,6 @@ public class InsectMovement : MonoBehaviour
             bullet.SetActive(true);
             // set bullet position to the front of the insect BoxCollider2D based on rotation
             Vector2 bulletPosition = insect.transform.position;
-            bulletPosition.x += Mathf.Cos(angle * Mathf.Deg2Rad) * insect.GetComponent<BoxCollider2D>().size.x / 4;
-            bulletPosition.y += Mathf.Sin(angle * Mathf.Deg2Rad) * insect.GetComponent<BoxCollider2D>().size.x / 4;
             bullet.transform.position = bulletPosition;
             StartCoroutine(Shoot(mousePosition));
         }
