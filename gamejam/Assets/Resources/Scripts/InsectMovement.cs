@@ -8,6 +8,7 @@ public class InsectMovement : MonoBehaviour
     private GameObject bullet;
     private GameObject insect;
     private bool isShooting = false;
+    private Animator anim;
 
     [SerializeField] private float speed = 1f;
     [SerializeField] private float bulletSpeed = 70f;
@@ -39,6 +40,8 @@ public class InsectMovement : MonoBehaviour
         if (insect == null)
         {
             Debug.LogError("No insect found");
+        } else {
+            anim = insect.GetComponent<Animator>();
         }
         bullet.SetActive(false);
     }
@@ -50,7 +53,9 @@ public class InsectMovement : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         float distanceToMouse = Vector2.Distance(insect.transform.position, mousePosition);
         // move towards the target if distanceToMouse is greater than minDistanceToMouse
-        if (distanceToMouse > minDistanceToMouse)
+        // get animator parameter
+        
+        if (distanceToMouse > minDistanceToMouse || !anim.GetBool("isDead"))
         {
             bullet.SetActive(false);
             // face the target
