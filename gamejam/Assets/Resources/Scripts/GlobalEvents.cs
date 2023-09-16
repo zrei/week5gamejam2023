@@ -24,4 +24,10 @@ public class GlobalEvents
         public static VoidEvent ClearPointsEvent;
         public static ShapeEvent ValidShapeEvent;
     }
+
+    public class PlayerControlEvents
+    {
+        public static VoidEvent NotWithinPointRangeEvent;
+        public static VoidEvent WithinPointRangeEvent;
+    }
 }

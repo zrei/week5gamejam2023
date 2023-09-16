@@ -32,7 +32,24 @@ public class PlayerMouse : Singleton<PlayerMouse>
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("!!!");
         if (other.gameObject.layer == LayerMask.NameToLayer("DrawnPoints"))
-            Debug.Log("Within point radius");
+        {
+            m_NumberOfPointsWithinRange += 1;
+            GlobalEvents.PlayerControlEvents.WithinPointRangeEvent?.Invoke();
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+            Debug.Log("Collided");
+            //HandleAttack();  //probably throw to another script for cleanliness
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("DrawnPoints"))
+        {
+            m_NumberOfPointsWithinRange -= 1;
+            if (m_NumberOfPointsWithinRange == 0)
+                GlobalEvents.PlayerControlEvents.NotWithinPointRangeEvent?.Invoke();
+        }      
     }
 }

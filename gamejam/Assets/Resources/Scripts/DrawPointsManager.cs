@@ -18,6 +18,8 @@ public class DrawPointsManager : Singleton<DrawPointsManager>
     {
         base.HandleAwake();
         GlobalEvents.CursorEvents.DrawPointEvent += DrawPoints;
+        GlobalEvents.PlayerControlEvents.WithinPointRangeEvent += HandleCollidePoint;
+        GlobalEvents.PlayerControlEvents.NotWithinPointRangeEvent += HandleNoPoint;
         m_LineRenderer = GetComponent<LineRenderer>();
         if (GlobalSettings.IsReady)
             HandleDependencies();
@@ -29,6 +31,8 @@ public class DrawPointsManager : Singleton<DrawPointsManager>
     {
         base.HandleDestroy();
         GlobalEvents.CursorEvents.DrawPointEvent -= DrawPoints;
+        GlobalEvents.PlayerControlEvents.WithinPointRangeEvent -= HandleCollidePoint;
+        GlobalEvents.PlayerControlEvents.NotWithinPointRangeEvent -= HandleNoPoint;
     }
 
     private void HandleDependencies()
@@ -42,6 +46,17 @@ public class DrawPointsManager : Singleton<DrawPointsManager>
             m_PointObjects.Add(newPoint);
         }
         m_LineRenderer.positionCount = 0;
+    }
+
+    private void HandleCollidePoint()
+    {
+        m_CanDrawPoints = true;
+    }
+
+    private void HandleNoPoint()
+    {
+        if (m_PointsInShape.Count > 0)
+            m_CanDrawPoints = false;
     }
 
     // returns disabled game object
