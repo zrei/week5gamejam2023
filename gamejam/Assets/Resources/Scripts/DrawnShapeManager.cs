@@ -22,7 +22,8 @@ public class DrawnShapeManager : Singleton<DrawnShapeManager>
 
     private void HandlePointDrawn(Vector3 mousePosition)
     {
-        m_PointsInShape.Add(mousePosition);
+        Vector3 pos = Camera.main.ScreenToWorldPoint(mousePosition);
+        m_PointsInShape.Add(new Vector3(pos.x, pos.y, 0f));
     }
     
     private void HandleShapeCompleted()
@@ -32,8 +33,8 @@ public class DrawnShapeManager : Singleton<DrawnShapeManager>
         for (int i = 0; i < GlobalSettings.g_PointsInShape; i++)
             polygonVectors.Add(m_PointsInShape[(i + 1) % GlobalSettings.g_PointsInShape] - m_PointsInShape[i]);
         
-        
-        Debug.Log(CheckValidShape(polygonVectors));
+        if (CheckValidShape(polygonVectors))
+            GlobalEvents.CursorEvents.ValidShapeEvent?.Invoke(m_PointsInShape, polygonVectors);
     }
 
     private bool CheckValidShape(List<Vector3> polygonVectors)
@@ -51,41 +52,41 @@ public class DrawnShapeManager : Singleton<DrawnShapeManager>
     private bool CheckIntersection(Vector3 line1Start, Vector3 line1End,
         Vector3 line1, Vector3 line2Start, Vector3 line2End, Vector3 line2){
 
-    Vector3 lineVec3 = line2Start - line1Start;
-    Vector3 crossVec1and2 = Vector3.Cross(line1, line2);
-    Vector3 crossVec3and2 = Vector3.Cross(lineVec3, line2);
+        Vector3 lineVec3 = line2Start - line1Start;
+        Vector3 crossVec1and2 = Vector3.Cross(line1, line2);
+        Vector3 crossVec3and2 = Vector3.Cross(lineVec3, line2);
 
-    float planarFactor = Vector3.Dot(lineVec3, crossVec1and2);
+        float planarFactor = Vector3.Dot(lineVec3, crossVec1and2);
 
-    //is coplanar, and not parallel
-    if( Mathf.Abs(planarFactor) < 0.0001f 
-            && crossVec1and2.sqrMagnitude > 0.0001f)
-    {
-        float s = Vector3.Dot(crossVec3and2, crossVec1and2) 
-                / crossVec1and2.sqrMagnitude;
-        Vector3 intersection = line1Start + (line1 * s);
-        if (intersection == line1Start || intersection == line2Start || intersection == line1End || intersection == line2End)
-            return false;
-        else if (!CheckWithinLineSegment(line1Start, line1End, line2Start, line2End, intersection))
-            return false;
+        //is coplanar, and not parallel
+        if( Mathf.Abs(planarFactor) < 0.0001f 
+                && crossVec1and2.sqrMagnitude > 0.0001f)
+        {
+            float s = Vector3.Dot(crossVec3and2, crossVec1and2) 
+                    / crossVec1and2.sqrMagnitude;
+            Vector3 intersection = line1Start + (line1 * s);
+            if (intersection == line1Start || intersection == line2Start || intersection == line1End || intersection == line2End)
+                return false;
+            else if (!CheckWithinLineSegment(line1Start, line1End, line2Start, line2End, intersection))
+                return false;
+            else
+                return true;
+        }
         else
-            return true;
-    }
-    else
-        return false;
+            return false;
 
-    bool CheckWithinLineSegment(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, Vector3 pointOfInterest)
-    {
-        double lineSegment1Length = (end1 - start1).sqrMagnitude;
-        bool withinLineSegment1 = (pointOfInterest - end1).sqrMagnitude <= lineSegment1Length && (pointOfInterest - start1).sqrMagnitude <= lineSegment1Length;
+        bool CheckWithinLineSegment(Vector3 start1, Vector3 end1, Vector3 start2, Vector3 end2, Vector3 pointOfInterest)
+        {
+            double lineSegment1Length = (end1 - start1).sqrMagnitude;
+            bool withinLineSegment1 = (pointOfInterest - end1).sqrMagnitude <= lineSegment1Length && (pointOfInterest - start1).sqrMagnitude <= lineSegment1Length;
 
-        double lineSegment2Length = (end2 - start2).sqrMagnitude;
-        bool withinLineSegment2 = (pointOfInterest - end2).sqrMagnitude <= lineSegment2Length && (pointOfInterest - start2).sqrMagnitude <= lineSegment2Length;
+            double lineSegment2Length = (end2 - start2).sqrMagnitude;
+            bool withinLineSegment2 = (pointOfInterest - end2).sqrMagnitude <= lineSegment2Length && (pointOfInterest - start2).sqrMagnitude <= lineSegment2Length;
 
-        return withinLineSegment1 && withinLineSegment2;
-    }
+            return withinLineSegment1 && withinLineSegment2;
+        }
     
-}
+    }
 
     private void HandlePointsCleared()
     {
