@@ -7,10 +7,12 @@ namespace Events
 {
     public delegate void VoidEvent();
     public delegate void FloatEvent(float _);
+    public delegate void IntEvent(int _);
 }
 
 public class GlobalEvents
 {
+    public static VoidEvent GameOverEvent;
     public class PlayerEvents
     {
         public static VoidEvent PlayerDeathEvent;
@@ -29,5 +31,10 @@ public class GlobalEvents
     {
         public static VoidEvent NotWithinPointRangeEvent;
         public static VoidEvent WithinPointRangeEvent;
+    }
+
+    public class FoodEvents
+    {
+        public static IntEvent FoodHealthEvent;
     }
 }

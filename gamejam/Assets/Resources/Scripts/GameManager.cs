@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class GameManager : Persisting
 {
-    [SerializeField] private float playerHealth = 100f;
-
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         GlobalEvents.PlayerEvents.PlayerHealthChangeEvent += ChangePlayerHealth;
         GlobalEvents.PlayerEvents.PlayerDeathEvent += PlayerDeath;
@@ -38,5 +36,5 @@ public class GameManager : Persisting
     private void PlayerDeath()
     {
         Debug.Log("Player died");
-    }
+    }*/
 }

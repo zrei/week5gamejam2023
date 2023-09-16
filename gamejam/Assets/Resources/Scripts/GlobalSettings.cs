@@ -16,4 +16,11 @@ public class GlobalSettings : Singleton<GlobalSettings>
 
     [SerializeField] private float m_ShapePointColliderRadius = 1f;
     public static float g_ShapePointColliderRadius => Instance.m_ShapePointColliderRadius;
+
+    [Header("Health values")]
+    [SerializeField] private int m_FoodHealthValue = 5;
+    public static int g_FoodHealthValue => Instance.m_FoodHealthValue;
+
+    [SerializeField] private int m_PlayerHealthValue = 10;
+    public static int g_PlayerHealthValue => Instance.m_PlayerHealthValue;
 }
