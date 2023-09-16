@@ -11,6 +11,9 @@ public class DrawPointsManager : Singleton<DrawPointsManager>
     private List<GameObject> m_PointObjects;
     private LineRenderer m_LineRenderer;
 
+    private bool m_CanDrawPoints = true;
+    public bool CanDrawPoints => m_CanDrawPoints;
+
     protected override void HandleAwake()
     {
         base.HandleAwake();

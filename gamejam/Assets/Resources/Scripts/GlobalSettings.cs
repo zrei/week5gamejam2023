@@ -9,4 +9,11 @@ public class GlobalSettings : Singleton<GlobalSettings>
     [Header("Mouse Points")]
     [SerializeField] private int m_PointsInShape = 4;
     public static int g_PointsInShape => Instance.m_PointsInShape;
+
+    [Header("Collider values")]
+    [SerializeField] private float m_PlayerCursorColliderRadius = 2f;
+    public static float g_PlayerCursorColliderRadius => Instance.m_PlayerCursorColliderRadius;
+
+    [SerializeField] private float m_ShapePointColliderRadius = 1f;
+    public static float g_ShapePointColliderRadius => Instance.m_ShapePointColliderRadius;
 }

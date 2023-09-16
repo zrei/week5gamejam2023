@@ -5,14 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Food
+  - Bullet
+  - Insect
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - DrawnPoints
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
@@ -41,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: DrawnPoints
+    uniqueID: 3909842755
     locked: 0
