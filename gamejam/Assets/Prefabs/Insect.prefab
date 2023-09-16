@@ -274,6 +274,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5786709437540397276}
   - component: {fileID: 7314127612497453331}
+  - component: {fileID: 3042021975969166732}
   m_Layer: 0
   m_Name: Insect
   m_TagString: Insect
@@ -313,3 +314,15 @@ MonoBehaviour:
   speed: 2
   bulletSpeed: 70
   minDistanceToMouse: 2
+--- !u!114 &3042021975969166732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8024877714867923044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e839e5ec47b740f3b8bfad66175250c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

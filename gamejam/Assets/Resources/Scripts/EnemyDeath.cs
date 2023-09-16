@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class EnemyDeath : MonoBehaviour
 {
+    private Animator anim;
+
     private void Awake()
     {
         GlobalEvents.CursorEvents.ValidShapeEvent += HandleShapeCompleted;
@@ -61,6 +63,12 @@ public class EnemyDeath : MonoBehaviour
     private void HandleShapeCompleted(List<Vector3> points, List<Vector3> sides)
     {
         Debug.Log("The shape is containing: " + CheckWithinShape(points, sides));
+        if (CheckWithinShape(points, sides)) 
+        {
+            anim = GetComponent<Animator>();
+            anim.SetTrigger("isDead");
+            Destroy(gameObject, 1f);
+        }
     }
 
     private bool CheckWithinShape(List<Vector3> points, List<Vector3> sides)
