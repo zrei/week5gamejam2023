@@ -9,7 +9,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
     private static T m_Instance = null;
     public static bool IsReady => m_Instance != null && m_Instance.m_IsReady;
     private bool m_IsReady = false;
-    public VoidEvent OnReady;
+    public static VoidEvent OnReady;
 
     private void Awake()
     {

@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6808af7e9d3486596adf51496f0d16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DebugTextOn: 0
+  m_DebugTextOn: 1
+  m_PointsInShape: 4
 --- !u!1 &3466920829575463121
 GameObject:
   m_ObjectHideFlags: 0
