@@ -55,7 +55,7 @@ public class InsectMovement : MonoBehaviour
         // move towards the target if distanceToMouse is greater than minDistanceToMouse
         // get animator parameter
         
-        if (distanceToMouse > minDistanceToMouse || !anim.GetBool("isDead"))
+        if (distanceToMouse > minDistanceToMouse && !anim.GetBool("hasDied"))
         {
             bullet.SetActive(false);
             // face the target
@@ -71,7 +71,7 @@ public class InsectMovement : MonoBehaviour
 
     void StartShooting(Vector2 mousePosition)
     {
-        if (!isShooting)
+        if (!isShooting && !anim.GetBool("hasDied"))
         {
             Vector2 direction = mousePosition - (Vector2)insect.transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
