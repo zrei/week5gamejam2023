@@ -32,7 +32,6 @@ public class PlayerMouse : Singleton<PlayerMouse>
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("!!!");
         if (other.gameObject.layer == LayerMask.NameToLayer("DrawnPoints"))
         {
             m_NumberOfPointsWithinRange += 1;
@@ -40,7 +39,6 @@ public class PlayerMouse : Singleton<PlayerMouse>
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
             GlobalEvents.PlayerEvents.PlayerHealthChangeEvent?.Invoke(-1);
-            //HandleAttack();  //probably throw to another script for cleanliness
     }
 
     private void OnTriggerExit2D(Collider2D other)
