@@ -7,14 +7,21 @@ public class WaveManager : MonoBehaviour
     public GameObject enemy;
 
     public List<Transform> spawnPoints;
+    private List<Transform> unusedSpawnPoints = new List<Transform>();
 
     public float spawnInterval;
     private float nextSpawnTime;
+    private int spawnCount;
     
     // Start is called before the first frame update
     void Start()
     {
         nextSpawnTime = Time.fixedTime;
+
+        foreach (Transform spawnPoint in spawnPoints)
+        {
+            unusedSpawnPoints.Add(spawnPoint);
+        }
     }
 
     // Update is called once per frame
@@ -24,13 +31,23 @@ public class WaveManager : MonoBehaviour
         {
             nextSpawnTime += spawnInterval;
             spawnInterval -= 0.1f;
-            SpawnWave();
+            SpawnWave(Random.Range(1, spawnPoints.Count));
         }
     }
 
-    void SpawnWave()
+    void SpawnWave(int spawnCount)
     {
-        Transform randomSpawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-        Instantiate(enemy, randomSpawnPoint);
+        for (int i = 0; i < spawnCount; i++)
+        {
+            Transform randomSpawnPoint = unusedSpawnPoints[Random.Range(0, unusedSpawnPoints.Count)];
+            Instantiate(enemy, randomSpawnPoint);
+            unusedSpawnPoints.Remove(randomSpawnPoint);
+        }
+
+        unusedSpawnPoints.Clear();
+        foreach (Transform spawnPoint in spawnPoints)
+        {
+            unusedSpawnPoints.Add(spawnPoint);
+        }
     }
 }
