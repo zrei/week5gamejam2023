@@ -8,6 +8,7 @@ public class InsectMovement : MonoBehaviour
     private GameObject bullet;
     private GameObject insect;
     private bool isShooting = false;
+
     [SerializeField] private float speed = 1f;
     [SerializeField] private float bulletSpeed = 70f;
     [SerializeField] private float minDistanceToMouse = 2f;
@@ -60,14 +61,6 @@ public class InsectMovement : MonoBehaviour
             insect.transform.position = Vector2.MoveTowards(insect.transform.position, targetPosition, speed * Time.deltaTime);
         } else {
             StartShooting(mousePosition);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Food")
-        {
-            Destroy(gameObject);
         }
     }
 

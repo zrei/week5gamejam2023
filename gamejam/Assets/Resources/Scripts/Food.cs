@@ -15,4 +15,13 @@ public class Food : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("On trigger enter");
+        if (other.tag == "Insect")
+        {
+            Destroy(other.gameObject.transform.parent.gameObject);
+        }
+    }
 }
