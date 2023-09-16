@@ -324,5 +324,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  bulletSpeed: 70
+  bulletSpeed: 30
   minDistanceToMouse: 2
