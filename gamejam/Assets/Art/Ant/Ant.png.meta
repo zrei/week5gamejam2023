@@ -126,10 +126,10 @@ TextureImporter:
       name: Ant_0
       rect:
         serializedVersion: 2
-        x: 98
-        y: 302
-        width: 104
-        height: 130
+        x: 202
+        y: 1672
+        width: 208
+        height: 260
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Ant_1
       rect:
         serializedVersion: 2
-        x: 316
-        y: 312
-        width: 100
-        height: 124
+        x: 638
+        y: 1692
+        width: 200
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Ant_2
       rect:
         serializedVersion: 2
-        x: 69
-        y: 157
-        width: 133
-        height: 89
+        x: 160
+        y: 1434
+        width: 266
+        height: 178
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Ant_3
       rect:
         serializedVersion: 2
-        x: 304
-        y: 165
-        width: 137
-        height: 77
+        x: 630
+        y: 1450
+        width: 274
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,6 +202,132 @@ TextureImporter:
       bones: []
       spriteID: cbe6acefff902f84ab043b627d7543c3
       internalID: -507593122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_4
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 1156
+        width: 266
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11cefe4650aa89c4fb0422c6ed821ff2
+      internalID: 745754693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_5
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 908
+        width: 266
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30836cd590721da418e9ff172c66417b
+      internalID: 1803179561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 897
+        width: 297
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08640d5678dffb848a862b9216dee66a
+      internalID: -552742858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_9
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 662
+        width: 262
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6cd8902059e3e4ca18cb3cb4c40afa
+      internalID: 1628013586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_11
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 632
+        width: 230
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e1bdc8fe5f788419a8d0b09d3e14d4
+      internalID: 1092703336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant_12
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 366
+        width: 256
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c050defc10c54574f89e3ef7d322a616
+      internalID: -1275334077
       vertices: []
       indices: 
       edges: []
@@ -219,8 +345,17 @@ TextureImporter:
     nameFileIdTable:
       Ant_0: -135871683
       Ant_1: 530248581
+      Ant_10: -1938452875
+      Ant_11: 1092703336
+      Ant_12: -1275334077
       Ant_2: 746774502
       Ant_3: -507593122
+      Ant_4: 745754693
+      Ant_5: 1803179561
+      Ant_6: -552742858
+      Ant_7: 1013060053
+      Ant_8: -1353435832
+      Ant_9: 1628013586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
