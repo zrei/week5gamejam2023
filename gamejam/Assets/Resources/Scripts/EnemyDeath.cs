@@ -77,6 +77,7 @@ public class EnemyDeath : MonoBehaviour
         int numIntersections = 0;
         for (int i = 0; i < GlobalSettings.g_PointsInShape; i++)
         {
+            Debug.Log(transform.position);
             if (CheckIntersection(points[i], points[(i + 1) % GlobalSettings.g_PointsInShape], sides[i], transform.position, Vector3.right))
                 numIntersections++;
         }
