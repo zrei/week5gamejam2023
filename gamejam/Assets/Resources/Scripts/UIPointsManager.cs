@@ -1,10 +1,12 @@
 using UnityEngine;
 using TMPro;
 
-public class PointsManager : Singleton<PointsManager>
+public class UIPointsManager : Singleton<UIPointsManager>
 {
     private int m_Points = 0;
-    public int Points => Instance.m_Points;
+    
+    [SerializeField] private TMP_Text m_Text;
+    private string m_ScoreText = "Score: ";
 
     protected override void HandleAwake()
     {
@@ -21,5 +23,6 @@ public class PointsManager : Singleton<PointsManager>
     private void HandleEnemyDeath()
     {
         m_Points += 1;
+        m_Text.text = m_ScoreText + m_Points;
     }
 }
