@@ -46,7 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DebugTextOn: 1
   m_PointsInShape: 4
+  m_DelayAfterCompleteShape: 0.5
+  m_PointBlueColor: {r: 0.21960784, g: 0.90588236, b: 0.8980392, a: 1}
   m_PlayerCursorColliderRadius: 0.3
-  m_ShapePointColliderRadius: 2
+  m_ShapePointColliderRadius: 8
   m_FoodHealthValue: 5
   m_PlayerHealthValue: 10
+  m_PlayerInvulTime: 0.5

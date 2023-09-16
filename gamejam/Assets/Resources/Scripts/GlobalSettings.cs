@@ -10,6 +10,12 @@ public class GlobalSettings : Singleton<GlobalSettings>
     [SerializeField] private int m_PointsInShape = 4;
     public static int g_PointsInShape => Instance.m_PointsInShape;
 
+    [SerializeField] private float m_DelayAfterCompleteShape = 2f;
+    public static float g_DelayAfterCompleteShape => Instance.m_DelayAfterCompleteShape;
+
+    [SerializeField] private Color m_PointBlueColor;
+    public static Color g_PointBlueColor => Instance.m_PointBlueColor;
+
     [Header("Collider values")]
     [SerializeField] private float m_PlayerCursorColliderRadius = 2f;
     public static float g_PlayerCursorColliderRadius => Instance.m_PlayerCursorColliderRadius;
@@ -23,4 +29,8 @@ public class GlobalSettings : Singleton<GlobalSettings>
 
     [SerializeField] private int m_PlayerHealthValue = 10;
     public static int g_PlayerHealthValue => Instance.m_PlayerHealthValue;
+
+    [Header("Player values")]
+    [SerializeField] private float m_PlayerInvulTime = 0.5f;
+    public static float g_PlayerInvulTime => Instance.m_PlayerInvulTime;
 }

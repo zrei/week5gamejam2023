@@ -25,7 +25,9 @@ public class GlobalEvents
         public delegate void ShapeEvent(List<Vector3> pointVectors, List<Vector3> sideVectors);
         public static CursorClickEvent DrawPointEvent;
         public static VoidEvent ClearPointsEvent;
+        public static VoidEvent CompleteDrawingAllPointsEvent;
         public static ShapeEvent ValidShapeEvent;
+        public static VoidEvent InvalidShapeEvent;
     }
 
     public class PlayerControlEvents

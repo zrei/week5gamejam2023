@@ -94,6 +94,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5252739274605582651, guid: 6682bcf4065974206911d6128ec77b72, type: 3}
+      propertyPath: m_PointBlueColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252739274605582651, guid: 6682bcf4065974206911d6128ec77b72, type: 3}
+      propertyPath: m_PointBlueColor.b
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252739274605582651, guid: 6682bcf4065974206911d6128ec77b72, type: 3}
+      propertyPath: m_PointBlueColor.g
+      value: 0.90588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 5252739274605582651, guid: 6682bcf4065974206911d6128ec77b72, type: 3}
+      propertyPath: m_PointBlueColor.r
+      value: 0.21960784
+      objectReference: {fileID: 0}
     - target: {fileID: 7653988379984719909, guid: 6682bcf4065974206911d6128ec77b72, type: 3}
       propertyPath: m_Name
       value: GlobalSettings

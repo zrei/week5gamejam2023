@@ -10,20 +10,27 @@ public class DrawnShapeManager : Singleton<DrawnShapeManager>
     {
         base.HandleAwake();
         GlobalEvents.CursorEvents.DrawPointEvent += HandlePointDrawn;
-        GlobalEvents.CursorEvents.ClearPointsEvent += HandlePointsCleared;
+        GlobalEvents.CursorEvents.ClearPointsEvent += HandleClearPoints;
+        GlobalEvents.CursorEvents.CompleteDrawingAllPointsEvent += HandleAllPointsDrawn;
     }
 
     protected override void HandleDestroy()
     {
         base.HandleDestroy();
         GlobalEvents.CursorEvents.DrawPointEvent -= HandlePointDrawn;
-        GlobalEvents.CursorEvents.ClearPointsEvent -= HandlePointsCleared;
+        GlobalEvents.CursorEvents.CompleteDrawingAllPointsEvent -= HandleAllPointsDrawn;
+        GlobalEvents.CursorEvents.ClearPointsEvent -= HandleClearPoints;
     }
 
     private void HandlePointDrawn(Vector3 mousePosition)
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(mousePosition);
         m_PointsInShape.Add(new Vector3(pos.x, pos.y, 0f));
+    }
+
+    private void HandleClearPoints()
+    {
+        m_PointsInShape.Clear();
     }
     
     private void HandleShapeCompleted()
@@ -35,6 +42,8 @@ public class DrawnShapeManager : Singleton<DrawnShapeManager>
         
         if (CheckValidShape(polygonVectors))
             GlobalEvents.CursorEvents.ValidShapeEvent?.Invoke(m_PointsInShape, polygonVectors);
+        else
+            GlobalEvents.CursorEvents.InvalidShapeEvent?.Invoke();
     }
 
     private bool CheckValidShape(List<Vector3> polygonVectors)
@@ -88,7 +97,7 @@ public class DrawnShapeManager : Singleton<DrawnShapeManager>
     
     }
 
-    private void HandlePointsCleared()
+    private void HandleAllPointsDrawn()
     {
         HandleShapeCompleted();
         m_PointsInShape.Clear();
