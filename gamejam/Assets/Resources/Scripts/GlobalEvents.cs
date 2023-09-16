@@ -1,4 +1,5 @@
 using Events;
+using UnityEngine;
 
 namespace Events
 {
@@ -8,5 +9,10 @@ namespace Events
 
 public class GlobalEvents
 {
-    
+    public class CursorEvents
+    {
+        public delegate void CursorClickEvent(Vector3 mouseCoordinates);
+        
+        public static CursorClickEvent DrawPointEvent;
+    }
 }
