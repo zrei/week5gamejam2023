@@ -9,6 +9,11 @@ namespace Events
 
 public class GlobalEvents
 {
+    public class PlayerEvents
+    {
+        public static VoidEvent PlayerDeathEvent;
+        public static FloatEvent PlayerHealthChangeEvent;
+    }
     public class CursorEvents
     {
         public delegate void CursorClickEvent(Vector3 mouseCoordinates);
