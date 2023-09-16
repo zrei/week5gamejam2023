@@ -96,6 +96,8 @@ GameObject:
   - component: {fileID: 1995553887879165036}
   - component: {fileID: 143506937948180983}
   - component: {fileID: 7583738381681789926}
+  - component: {fileID: 7104741874839930082}
+  - component: {fileID: 6203774327960161423}
   m_Layer: 7
   m_Name: Ant
   m_TagString: Insect
@@ -242,6 +244,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7104741874839930082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786459380647094976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e839e5ec47b740f3b8bfad66175250c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!95 &6203774327960161423
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7786459380647094976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc73ae419f9348842bf39a5d0e9fffcd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8024877714867923044
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,8 +287,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5786709437540397276}
   - component: {fileID: 7314127612497453331}
-  - component: {fileID: 3042021975969166732}
-  - component: {fileID: 2269437073981166680}
   m_Layer: 0
   m_Name: Insect
   m_TagString: Insect
@@ -285,7 +318,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8024877714867923044}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8810ea9c63c76f4899be89b164bda27, type: 3}
   m_Name: 
@@ -293,36 +326,3 @@ MonoBehaviour:
   speed: 2
   bulletSpeed: 70
   minDistanceToMouse: 2
---- !u!114 &3042021975969166732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024877714867923044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e839e5ec47b740f3b8bfad66175250c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &2269437073981166680
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8024877714867923044}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc73ae419f9348842bf39a5d0e9fffcd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
